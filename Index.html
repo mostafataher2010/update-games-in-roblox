@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Update Games</title>
+<style>
+  body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .rainbow {
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  }
+  .big-text { font-size: 3em; }
+  .green { color: green; }
+  .brown { color: saddlebrown; }
+  .blue { color: blue; }
+  .light-blue { color: lightblue; }
+  .red { color: red; }
+  .white { color: white; }
+  .timer { font-size: 1.2em; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+  <div class="rainbow big-text">Update Games</div>  <div><strong class="green">Grow a Garden:</strong> <span class="green">Beanstalk event</span><div id="timer1" class="timer"></div></div>
+  <div><strong class="blue">Steal a brainrot:</strong> <span class="rainbow">New brainrot</span><div id="timer2" class="timer"></div></div>
+  <div><strong class="brown">99 Nights in the Forest:</strong> <span class="red">The Fishing Update</span><div id="timer3" class="timer"></div></div>
+  <div><strong class="light-blue">Dress To Impress:</strong> <span class="red">LADY GAGA'S MAYTHEM</span><div id="timer4" class="timer"></div></div>
+  <div><strong class="red">Brookhaven:</strong> <span class="white">New Houses+ More</span><div id="timer5" class="timer"></div></div>
+  <div><strong class="red">Blade ball:</strong> <span class="rainbow">Strike tournament!</span><div id="timer6" class="timer"></div></div>  <p>Made by Mo7a🇪🇬 but the scripts by chatgpt💀</p>
+  <p class="rainbow">More games coming soon...</p><script>
+function startTimer(id, dateString) {
+  const targetDate = new Date(dateString).getTime();
+  const timerElement = document.getElementById(id);
+
+  function updateTimer() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    if (distance <= 0) {
+      timerElement.innerHTML = '<span class="red">Happening now</span>';
+      clearInterval(interval);
+      return;
+    }
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    timerElement.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  updateTimer();
+  const interval = setInterval(updateTimer, 1000);
+}
+
+startTimer("timer1", "Aug 16, 2025 17:00:00");
+startTimer("timer2", "Aug 16, 2025 00:00:00");
+startTimer("timer3", "Aug 15, 2025 18:00:00");
+startTimer("timer4", "Aug 16, 2025 18:00:00");
+startTimer("timer5", "Aug 15, 2025 22:00:00");
+startTimer("timer6", "Aug 16, 2025 00:00:00");
+</script></body>
+</html>
